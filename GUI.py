@@ -66,9 +66,9 @@ def classify_image():
     prediction = model.predict(img_array)[0].item()
 
     if prediction < 0.5:
-        label_result.config(text=f"🔥 FIRE DETECTED! ({prediction * 100:.2f}%)", fg="red")
+        label_result.config(text=f"FIRE DETECTED! ({prediction * 100:.2f}%)", fg="red")
     else:
-        label_result.config(text=f"✅ No Fire Detected ({(1 - prediction) * 100:.2f}%)", fg="green")
+        label_result.config(text=f"No Fire Detected ({(1 - prediction) * 100:.2f}%)", fg="green")
 
 # Start webcam detection in thread
 def start_webcam_detection():
@@ -92,10 +92,10 @@ def webcam_detection():
         prediction = model.predict(input_tensor)[0].item()
 
         if prediction < 0.5:
-            label = f"🔥 FIRE DETECTED! ({prediction * 100:.2f}%)"
+            label = f"FIRE DETECTED! ({prediction * 100:.2f}%)"
             color = (0, 0, 255)
         else:
-            label = f"✅ No Fire ({(1 - prediction) * 100:.2f}%)"
+            label = f"No Fire ({(1 - prediction) * 100:.2f}%)"
             color = (0, 255, 0)
 
         cv2.putText(frame, label, (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, color, 2)
