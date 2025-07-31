@@ -7,7 +7,7 @@ from tensorflow.keras.models import load_model
 import threading
 
 # Load trained model
-model = load_model("CNN_BEST_MODEL.h5")
+model = load_model("BEST_MODEL.h5")
 IMG_SIZE = (124, 124)
 
 # GUI setup
